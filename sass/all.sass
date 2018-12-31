@@ -1,0 +1,212 @@
+//mixin
+=bgcenter($url)
+    background-image: url($url)
+    background-size: cover
+    background-position: center center
+=horSelfCenter
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+
+//media
+@media(max-width: 768px)
+    .header
+        height: 300px !important
+        h1
+            font-size: 1.5rem !important
+    #hot_administrative
+        top: 0 !important
+    .hr
+        margin-top: 25px !important
+    .card
+        flex: 0 1 100% !important
+@media(max-width: 375px)
+    .header
+        height: 200px !important
+        h1
+            font-size: 1.1rem !important
+    .btn-hot
+        font-size: 16px !important
+//sass
+body, html
+    font-size: 18px
+    padding: 0
+    margin: 0
+.header
+    position: relative
+    margin: 0 auto
+    max-width: 1024px
+    height: 380px
+    +bgcenter("../img/Hero.png")
+    h1
+        +horSelfCenter
+        top: 20%
+        font-size: 2.5rem
+        color: #ffffff
+        letter-spacing: 0.25rem
+    #administrative
+        +horSelfCenter
+        width: 44.1%
+        top: 60%
+        padding: 0.25rem 0
+        background-color: rgba(255, 255, 255, .7)
+        border: 3px solid #FFF
+        border-radius: 3px
+#hot_administrative
+    position: relative
+    box-sizing: border-box
+    max-width: 800px
+    height: 28%
+    top: -25px
+    margin: 0 auto
+    background-color: #fff
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 20)
+    border-radius: 5px
+    padding: 10px 25px
+.hot_administratives
+    margin:
+        top: 15px
+        left: 20px
+
+//熱門行政區的按鈕
+.btn-hot
+    display: inline-block
+    box-sizing: border-box
+    padding: 5px 25px
+    background-color: #8A82CC
+    border-radius: 5px
+    font-size: 20px
+    color: #fff
+    cursor: pointer
+    margin:
+        right: 15px
+        bottom: 10px
+    
+.btn-hot-o
+    background-color: #FFA782
+.btn-hot-y
+    background-color: #F5D105
+.btn-hot-b
+    background-color: #559AC8
+
+.hr
+    max-width: 900px
+    margin: 0 auto
+    border: 1px dashed #559AC8
+    margin-top: 15px
+    position: relative
+    z-index: -5
+    &:before
+        content: ''        
+        border: 1px solid #559AC8
+        border-radius: 50%
+        width: 22px
+        height: 22px
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        background-color: #fff
+    &:after
+        content: ''
+        border-style: solid
+        border-width: 11px 7px 0px 7px
+        border-color: #559AC8 transparent transparent transparent
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+h2
+    font-size: 36px
+    color: #8A82CC
+    display: inline-block
+    margin-top: 65px
+    margin-left: 50%
+    transform: translateX(-50%)
+
+//卡片
+.card-list
+    position: relative
+    display: flex
+    flex-wrap: wrap
+    max-width: 960px
+    margin: 0 auto
+    justify-content: flex-start
+    .goTop
+        position: absolute
+        bottom: -5px
+        right: 16px
+.card
+    flex: 0 1 47%
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2)
+    background-color: #fff
+    margin: 8px
+
+    .card-header
+        box-sizing: border-box
+        background-size: cover
+        background-position: center center
+        height: 155px
+        display: flex
+        justify-content: space-between
+        align-items: flex-end
+        color: white
+        padding: 14px 22px
+        .title
+            font-size: 24px
+        .subtitle
+            font-size: 16px
+    .card-body
+        box-sizing: border-box
+        padding: 6px 19px 14px 26px
+        font-size: 16px
+        img
+            margin-right: 8px
+        div
+            margin: 8px 0
+        .foot
+            display: flex
+            justify-content: space-between
+
+//分頁
+.page
+    margin:
+        top: 49px
+        bottom: 41px
+    display: flex
+    justify-content: center
+.pagination
+    display: inline-block
+    a
+        color: black
+        float: left
+        padding: 8px 16px
+        text-decoration: none
+        &:hover:not(.active)
+            background-color: #ddd
+            border-radius: 5px
+    .active
+        background-color: #4caf50
+        color: white
+        border-radius: 5px
+    .disabled
+        pointer-events: none
+        color: #eee
+        
+    
+footer
+    box-sizing: border-box
+    max-width: 1024px
+    background-color: #559acb
+    color: white
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding: 24px 0
+    margin: 0 auto
+    span
+        color: #ffd366
+        margin-top: 15px
+            
